@@ -1,0 +1,350 @@
+{
+  "version": "6.1",
+  "name": "Bot Consultório Dra. Bruna",
+  "groups": [
+    {
+      "id": "start-group",
+      "title": "Start",
+      "graphCoordinates": { "x": 0, "y": 0 },
+      "blocks": [
+        { "id": "start-block", "type": "start", "label": "Start" }
+      ]
+    },
+    {
+      "id": "boas-vindas",
+      "title": "Boas-vindas",
+      "graphCoordinates": { "x": 300, "y": 0 },
+      "blocks": [
+        {
+          "id": "msg-bv1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Olá! 👋 Bem-vindo(a) ao consultório da *Dra. Bruna Maciel* — especialista em Reumatologia e Medicina Integrativa." }] }] }
+        },
+        {
+          "id": "msg-bv2",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Como posso te ajudar hoje? 😊\n\nDigite o número da opção desejada:" }] }] }
+        },
+        {
+          "id": "menu-choice",
+          "type": "choice input",
+          "items": [
+            { "id": "opt1", "content": "1️⃣ Agendar 1ª Consulta" },
+            { "id": "opt2", "content": "2️⃣ Agendar Retorno" },
+            { "id": "opt3", "content": "3️⃣ Reumatologia" },
+            { "id": "opt4", "content": "4️⃣ Medicina Integrativa" },
+            { "id": "opt5", "content": "5️⃣ Valores / Convênios" },
+            { "id": "opt6", "content": "6️⃣ Localização e Horários" },
+            { "id": "opt7", "content": "7️⃣ Falar com a Secretaria" },
+            { "id": "opt8", "content": "8️⃣ Urgência" }
+          ],
+          "options": { "isMultipleChoice": false, "buttonLabel": "Enviar" }
+        }
+      ]
+    },
+    {
+      "id": "primeira-consulta",
+      "title": "1ª Consulta",
+      "graphCoordinates": { "x": 700, "y": -600 },
+      "blocks": [
+        {
+          "id": "pc-msg1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Ótimo! Vamos agendar sua *primeira consulta* com a Dra. Bruna. 📋" }] }] }
+        },
+        {
+          "id": "pc-msg2",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "📌 *Informações importantes para a 1ª consulta:*\n\n• Duração: aproximadamente 1 hora\n• Traga seus exames anteriores e receitas atuais\n• Chegue 10 minutos antes do horário" }] }] }
+        },
+        {
+          "id": "pc-nome",
+          "type": "text input",
+          "options": { "labels": { "placeholder": "Digite seu nome completo" } },
+          "variableId": "nome-paciente"
+        },
+        {
+          "id": "pc-msg-nome",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Obrigada, {{nome-paciente}}! 😊" }] }] }
+        },
+        {
+          "id": "pc-msg3",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Para confirmar o agendamento, nossa secretaria entrará em contato em breve.\n\n📞 Ou você pode ligar diretamente: *(35) 9927-7760*\n\nHorário de atendimento:\n🕐 Seg a Sex: 8h às 18h" }] }] }
+        },
+        {
+          "id": "pc-msg4",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Posso te ajudar com mais alguma coisa?" }] }] }
+        },
+        {
+          "id": "pc-final-choice",
+          "type": "choice input",
+          "items": [
+            { "id": "pc-vol-menu", "content": "🔙 Voltar ao Menu" },
+            { "id": "pc-encerrar", "content": "✅ Não, obrigada!" }
+          ],
+          "options": { "isMultipleChoice": false }
+        }
+      ]
+    },
+    {
+      "id": "retorno",
+      "title": "Retorno",
+      "graphCoordinates": { "x": 700, "y": -300 },
+      "blocks": [
+        {
+          "id": "ret-msg1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Vamos agendar seu *retorno*! 📋" }] }] }
+        },
+        {
+          "id": "ret-msg2",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "📌 *Para a consulta de retorno, lembre-se de trazer:*\n\n• Exames solicitados na última consulta\n• Lista de medicamentos em uso\n• Dúvidas anotadas" }] }] }
+        },
+        {
+          "id": "ret-nome",
+          "type": "text input",
+          "options": { "labels": { "placeholder": "Seu nome completo" } },
+          "variableId": "nome-paciente"
+        },
+        {
+          "id": "ret-msg3",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Perfeito, {{nome-paciente}}! Nossa secretaria confirmará seu horário em breve.\n\n📞 Contato direto: *(35) 9927-7760*" }] }] }
+        },
+        {
+          "id": "ret-final-choice",
+          "type": "choice input",
+          "items": [
+            { "id": "ret-vol-menu", "content": "🔙 Voltar ao Menu" },
+            { "id": "ret-encerrar", "content": "✅ Não, obrigada!" }
+          ],
+          "options": { "isMultipleChoice": false }
+        }
+      ]
+    },
+    {
+      "id": "reumatologia",
+      "title": "Reumatologia",
+      "graphCoordinates": { "x": 700, "y": 0 },
+      "blocks": [
+        {
+          "id": "reum-msg1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "🦴 *Reumatologia*\n\nA Dra. Bruna é especialista em Reumatologia com mais de 10 anos de experiência." }] }] }
+        },
+        {
+          "id": "reum-msg2",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "🏥 *Condições tratadas:*\n\n• Artrite Reumatoide\n• Lúpus Eritematoso Sistêmico\n• Osteoporose\n• Fibromialgia\n• Espondilite Anquilosante\n• Gota\n• Síndrome de Sjögren\n• Artrose\n• Vasculites" }] }] }
+        },
+        {
+          "id": "reum-msg3",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Gostaria de agendar uma consulta de Reumatologia?" }] }] }
+        },
+        {
+          "id": "reum-choice",
+          "type": "choice input",
+          "items": [
+            { "id": "reum-sim", "content": "✅ Sim, quero agendar" },
+            { "id": "reum-menu", "content": "🔙 Voltar ao Menu" }
+          ],
+          "options": { "isMultipleChoice": false }
+        }
+      ]
+    },
+    {
+      "id": "medicina-integrativa",
+      "title": "Medicina Integrativa",
+      "graphCoordinates": { "x": 700, "y": 300 },
+      "blocks": [
+        {
+          "id": "mi-msg1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "🌿 *Medicina Integrativa*\n\nA Dra. Bruna é pós-graduada em Medicina Integrativa e oferece uma abordagem que une o melhor da medicina convencional com práticas integrativas." }] }] }
+        },
+        {
+          "id": "mi-msg2",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "✨ *Recursos disponíveis:*\n\n• Acupuntura\n• Fitoterapia\n• Suplementação nutricional\n• Nutrologia\n• Medicina do estilo de vida\n• Abordagem mente-corpo" }] }] }
+        },
+        {
+          "id": "mi-msg3",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Gostaria de agendar uma consulta de Medicina Integrativa?" }] }] }
+        },
+        {
+          "id": "mi-choice",
+          "type": "choice input",
+          "items": [
+            { "id": "mi-sim", "content": "✅ Sim, quero agendar" },
+            { "id": "mi-menu", "content": "🔙 Voltar ao Menu" }
+          ],
+          "options": { "isMultipleChoice": false }
+        }
+      ]
+    },
+    {
+      "id": "valores",
+      "title": "Valores",
+      "graphCoordinates": { "x": 700, "y": 600 },
+      "blocks": [
+        {
+          "id": "val-msg1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "💰 *Valores das Consultas*" }] }] }
+        },
+        {
+          "id": "val-msg2",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "📋 *Consulta particular:*\n• 1ª Consulta: R$ 350,00\n• Retorno: R$ 250,00\n\n🏥 *Convênios aceitos:*\n• Unimed\n• Entre em contato para verificar outros convênios\n\n📞 Para mais informações: *(35) 9927-7760*" }] }] }
+        },
+        {
+          "id": "val-final-choice",
+          "type": "choice input",
+          "items": [
+            { "id": "val-agendar", "content": "📅 Quero agendar" },
+            { "id": "val-menu", "content": "🔙 Voltar ao Menu" }
+          ],
+          "options": { "isMultipleChoice": false }
+        }
+      ]
+    },
+    {
+      "id": "localizacao",
+      "title": "Localização",
+      "graphCoordinates": { "x": 700, "y": 900 },
+      "blocks": [
+        {
+          "id": "loc-msg1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "📍 *Localização do Consultório*" }] }] }
+        },
+        {
+          "id": "loc-msg2",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "🏥 *Endereço:*\nItajubá - MG\n\n🕐 *Horários de atendimento:*\nSegunda a Sexta: 8h às 18h\n\n📞 *Telefone:* (35) 9927-7760\n\n📱 *WhatsApp:* +55 35 9927-7760" }] }] }
+        },
+        {
+          "id": "loc-final-choice",
+          "type": "choice input",
+          "items": [
+            { "id": "loc-agendar", "content": "📅 Quero agendar uma consulta" },
+            { "id": "loc-menu", "content": "🔙 Voltar ao Menu" }
+          ],
+          "options": { "isMultipleChoice": false }
+        }
+      ]
+    },
+    {
+      "id": "secretaria",
+      "title": "Secretaria",
+      "graphCoordinates": { "x": 700, "y": 1200 },
+      "blocks": [
+        {
+          "id": "sec-msg1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "👩‍💼 Certo! Vou transferir você para nossa secretaria." }] }] }
+        },
+        {
+          "id": "sec-msg2",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "📞 Nossa secretaria responderá em breve.\n\n⏰ *Horário de atendimento:*\nSegunda a Sexta: 8h às 18h\n\nCaso seja urgente, ligue: *(35) 9927-7760*" }] }] }
+        },
+        {
+          "id": "sec-nome",
+          "type": "text input",
+          "options": { "labels": { "placeholder": "Deixe seu nome para facilitar o atendimento" } },
+          "variableId": "nome-paciente"
+        },
+        {
+          "id": "sec-msg3",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Obrigada, {{nome-paciente}}! Nossa equipe entrará em contato com você em breve. 😊" }] }] }
+        }
+      ]
+    },
+    {
+      "id": "urgencia",
+      "title": "Urgência",
+      "graphCoordinates": { "x": 700, "y": 1500 },
+      "blocks": [
+        {
+          "id": "urg-msg1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "🚨 *Urgência*" }] }] }
+        },
+        {
+          "id": "urg-msg2",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Em caso de urgência ou emergência:\n\n🏥 *Procure o pronto-socorro mais próximo*\n\n📞 SAMU: *192*\n📞 Bombeiros: *193*\n\nPara assuntos urgentes do consultório:\n📞 *(35) 9927-7760* (durante horário comercial)" }] }] }
+        },
+        {
+          "id": "urg-choice",
+          "type": "choice input",
+          "items": [
+            { "id": "urg-menu", "content": "🔙 Voltar ao Menu" }
+          ],
+          "options": { "isMultipleChoice": false }
+        }
+      ]
+    },
+    {
+      "id": "encerramento",
+      "title": "Encerramento",
+      "graphCoordinates": { "x": 1200, "y": 0 },
+      "blocks": [
+        {
+          "id": "enc-msg1",
+          "type": "text",
+          "content": { "richText": [{ "type": "p", "children": [{ "text": "Foi um prazer te atender! 😊\n\nQualquer dúvida, estamos aqui. Até logo! 👋\n\n*Consultório Dra. Bruna Maciel*\n🌿 Reumatologia | Medicina Integrativa" }] }] }
+        }
+      ]
+    }
+  ],
+  "edges": [
+    { "id": "e1", "from": { "groupId": "start-group", "blockId": "start-block" }, "to": { "groupId": "boas-vindas" } },
+    { "id": "e2", "from": { "groupId": "boas-vindas", "blockId": "menu-choice", "itemId": "opt1" }, "to": { "groupId": "primeira-consulta" } },
+    { "id": "e3", "from": { "groupId": "boas-vindas", "blockId": "menu-choice", "itemId": "opt2" }, "to": { "groupId": "retorno" } },
+    { "id": "e4", "from": { "groupId": "boas-vindas", "blockId": "menu-choice", "itemId": "opt3" }, "to": { "groupId": "reumatologia" } },
+    { "id": "e5", "from": { "groupId": "boas-vindas", "blockId": "menu-choice", "itemId": "opt4" }, "to": { "groupId": "medicina-integrativa" } },
+    { "id": "e6", "from": { "groupId": "boas-vindas", "blockId": "menu-choice", "itemId": "opt5" }, "to": { "groupId": "valores" } },
+    { "id": "e7", "from": { "groupId": "boas-vindas", "blockId": "menu-choice", "itemId": "opt6" }, "to": { "groupId": "localizacao" } },
+    { "id": "e8", "from": { "groupId": "boas-vindas", "blockId": "menu-choice", "itemId": "opt7" }, "to": { "groupId": "secretaria" } },
+    { "id": "e9", "from": { "groupId": "boas-vindas", "blockId": "menu-choice", "itemId": "opt8" }, "to": { "groupId": "urgencia" } },
+    { "id": "e10", "from": { "groupId": "primeira-consulta", "blockId": "pc-final-choice", "itemId": "pc-vol-menu" }, "to": { "groupId": "boas-vindas" } },
+    { "id": "e11", "from": { "groupId": "primeira-consulta", "blockId": "pc-final-choice", "itemId": "pc-encerrar" }, "to": { "groupId": "encerramento" } },
+    { "id": "e12", "from": { "groupId": "retorno", "blockId": "ret-final-choice", "itemId": "ret-vol-menu" }, "to": { "groupId": "boas-vindas" } },
+    { "id": "e13", "from": { "groupId": "retorno", "blockId": "ret-final-choice", "itemId": "ret-encerrar" }, "to": { "groupId": "encerramento" } },
+    { "id": "e14", "from": { "groupId": "reumatologia", "blockId": "reum-choice", "itemId": "reum-sim" }, "to": { "groupId": "primeira-consulta" } },
+    { "id": "e15", "from": { "groupId": "reumatologia", "blockId": "reum-choice", "itemId": "reum-menu" }, "to": { "groupId": "boas-vindas" } },
+    { "id": "e16", "from": { "groupId": "medicina-integrativa", "blockId": "mi-choice", "itemId": "mi-sim" }, "to": { "groupId": "primeira-consulta" } },
+    { "id": "e17", "from": { "groupId": "medicina-integrativa", "blockId": "mi-choice", "itemId": "mi-menu" }, "to": { "groupId": "boas-vindas" } },
+    { "id": "e18", "from": { "groupId": "valores", "blockId": "val-final-choice", "itemId": "val-agendar" }, "to": { "groupId": "primeira-consulta" } },
+    { "id": "e19", "from": { "groupId": "valores", "blockId": "val-final-choice", "itemId": "val-menu" }, "to": { "groupId": "boas-vindas" } },
+    { "id": "e20", "from": { "groupId": "localizacao", "blockId": "loc-final-choice", "itemId": "loc-agendar" }, "to": { "groupId": "primeira-consulta" } },
+    { "id": "e21", "from": { "groupId": "localizacao", "blockId": "loc-final-choice", "itemId": "loc-menu" }, "to": { "groupId": "boas-vindas" } },
+    { "id": "e22", "from": { "groupId": "urgencia", "blockId": "urg-choice", "itemId": "urg-menu" }, "to": { "groupId": "boas-vindas" } }
+  ],
+  "variables": [
+    { "id": "nome-paciente", "name": "nome-paciente" },
+    { "id": "telefone", "name": "telefone" },
+    { "id": "canal", "name": "canal" }
+  ],
+  "settings": {
+    "typingEmulation": { "enabled": true, "speed": 300, "maxDelay": 1.5 },
+    "isBrandingEnabled": false
+  },
+  "theme": {
+    "chat": {
+      "hostAvatar": { "isEnabled": true },
+      "hostBubbles": { "backgroundColor": "#F0F4FF", "color": "#1a1a1a" },
+      "guestBubbles": { "backgroundColor": "#0066CC", "color": "#FFFFFF" },
+      "buttons": { "backgroundColor": "#0066CC", "color": "#FFFFFF" }
+    }
+  }
+}
