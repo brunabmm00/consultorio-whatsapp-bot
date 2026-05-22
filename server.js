@@ -13,7 +13,7 @@ const VERIFY_TOKEN     = process.env.VERIFY_TOKEN     || 'consultorio_dra_bruna'
 const WHATSAPP_TOKEN   = process.env.WHATSAPP_TOKEN;   // Token do Meta
 const PHONE_NUMBER_ID  = process.env.PHONE_NUMBER_ID;  // ID do número WhatsApp
 const TYPEBOT_ID       = process.env.TYPEBOT_ID;       // ID do typebot publicado
-const TYPEBOT_API_URL  = 'https://app.typebot.com/api/v1';
+const TYPEBOT_API_URL  = 'https://typebot.io/api/v1';
 
 // ─── SESSÕES (em memória — adequado para baixo volume) ───────────────────────
 // Formato: { [numeroWhatsApp]: { sessionId, ultimaAtividade } }
